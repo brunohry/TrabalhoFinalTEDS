@@ -1,0 +1,28 @@
+html,
+body {
+  height: 100%;
+  background-color: black;
+}
+
+.scorearea {
+  height: 100%;
+  background-color: #01f2ec;
+}
+
+.playarea {
+  height: 100%;
+  background-color: white;
+}
+
+.jewel {
+  height: 100%;
+  width: 100%;
+}
+
+.play-row {
+  height: calc(100% / 8);
+}
+
+.play-col {
+  height: 100%;
+}
