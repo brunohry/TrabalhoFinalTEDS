@@ -1,10 +1,10 @@
 import GameImpl from "./Logic/GameImpl.js";
-import Demo from "./Display/Demo.js";
+import Render from "./Display/Render.js";
 import Cell from "./Object/Cell.js"
 import readline from 'readline-sync';
 
 var alphabet = 'abcdefghijklmnopqrstuvwxyz'.toUpperCase().split('');
-var display = new Demo();
+var display = new Render();
 var game = new GameImpl();
 
 display.ConsoleDisplay(game.board);

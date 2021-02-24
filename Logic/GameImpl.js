@@ -1,5 +1,5 @@
 import BasicGenerator from "./BasicGenerator.js";
-import Demo from "../Display/Demo.js"
+import Render from "../Display/Render.js"
 import Cell from "../Object/Cell.js"
 
 class GameImpl {

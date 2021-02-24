@@ -5,7 +5,7 @@ class BasicGenerator {
     }
 
     initialize = ()=>{
-        var size = 10;
+        var size = 8;
         let board = [];
         let line = [];
         for(var i = 0; i<= size * size; i++ ){
