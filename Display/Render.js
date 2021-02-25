@@ -6,7 +6,7 @@ class Render{
         let display = "    ";
         let pos = 0;
         board.forEach(line => {
-            display += '<div class="row play-row">';
+            display += '<div onclick="selectItem(event)" class="row play-row">';
             pos ++;
             line.forEach(item =>{
                 
