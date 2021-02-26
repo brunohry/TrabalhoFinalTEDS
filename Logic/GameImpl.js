@@ -1,6 +1,66 @@
-import BasicGenerator from "./BasicGenerator.js";
-import Render from "../Display/Render.js"
-import Cell from "../Object/Cell.js"
+
+class Cell{
+    constructor(row, col, icon){
+        this.row = row;
+        this.col = col;
+        this.icon = icon;
+    }
+
+    isAdjacent( other){
+        return (this.col == other.col && Math.abs(this.row - other.row) == 1) 
+            || (this.row == other.row && Math.abs(this.col - other.col) == 1) 
+    }
+
+    print(){
+        console.log("col: " + this.col + ", row: " + this.row + ", icon: " + this.icon)
+    }
+}
+
+class BasicGenerator {
+    
+    generate = ()=>{
+        return Math.floor(Math.random() * 5); 
+    }
+
+    initialize = ()=>{
+        var size = 8;
+        let board = [];
+        let line = [];
+        for(var i = 0; i<= size * size; i++ ){
+            if(i != 0 && i%size == 0){
+                board.push(line);
+                line = [];
+            }
+            let rng = Math.floor(Math.random() * 5);
+            if(i % size == 0){
+                if(i==0){
+                    line.push(rng);
+                }else{
+                    var above = board[board.length -1][i%size];
+                    while(rng == above){
+                        rng = Math.floor(Math.random() * 5);
+                    }
+                    line.push(rng);
+                }
+            }else if(i < size){
+                var before = line[i%size -1];
+                while(rng == before){
+                    rng = Math.floor(Math.random() * 5);
+                }
+                line.push(rng);
+            }else{
+                var above = board[board.length -1][i % size];
+                var before = line[i%size - 1 ];
+                while(rng == above || rng == before){
+                    rng = Math.floor(Math.random() * 5);
+                }
+                line.push(rng);
+            }
+            line.push();
+        }
+        return board;
+    }
+}
 
 class GameImpl {
     constructor() {

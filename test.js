@@ -25,18 +25,3 @@ function swap(item1, item2) {
     item2.src = val1;
 }
 
-function selectItem(event){
-    console.log(event.target.src);
-    if (selected.length == 0){
-        selected.push(event.target);
-        event.target.style.border = "thick solid #0000FF";
-    }
-    else {
-        var prev = selected.pop();
-        var curr = event.target
-        if (checkBoundaries(prev.parentElement, curr.parentElement)) {
-            swap(prev, curr)
-        }
-        prev.style.border = "";
-    }
-}
